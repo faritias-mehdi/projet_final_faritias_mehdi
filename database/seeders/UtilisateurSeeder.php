@@ -29,9 +29,9 @@ class UtilisateurSeeder extends Seeder
 
         User::create( [
             'name' => 'webmaster',
-            'email' => 'webmaster@gmail.com',
+            'email' => 'webmaster123@gmail.com',
             'email_verified_at' => now(),
-            'password' => 'webtest', // password
+            'password' => 'webtest//', // password
         ])->assignRole('webmaster');
     }
 }

@@ -95,7 +95,7 @@
                                         <div class=" d-flex ">
                                             <div class=" d-flex justify-content-center flex-column align-items-center">
                                                 <i class="fa-solid fa-user "></i>
-                                                {{ Auth::user()->name }}
+                                                {{-- {{ Auth::user()->name }} --}}
                                                 
                                             </div>
                                             <form method="POST" action="{{ route('logout') }}">

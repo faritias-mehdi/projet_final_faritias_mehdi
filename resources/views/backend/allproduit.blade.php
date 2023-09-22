@@ -124,23 +124,13 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit" class=" btn btn-danger text-white "
-                                onclick="return confirm('Êtes-vous sûr de vouloir supprimer?')"><i
+                                onclick="return confirm('are you sure about that ?')"><i
                                     class="fa-solid fa-trash-can"></i></button>
                         </form>
                     </td>
 
                 </tr>
-            @endforeach
-
-
-            {{-- @foreach ($allusers as $alluser)
-        @if ($alluser->name == 'admin')
-            
-        @else
-            
-        @endif
-            
-        @endforeach --}}
+            @endforeach 
 
         </tbody>
 
