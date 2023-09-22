@@ -13,9 +13,8 @@ class Produit extends Model
         'titre', 
         'prix',
         'image',
-        'createur', 
         'stock',
-        'categorie', // Ajoutez cette colonne pour stocker la catégorie du produit
+        'brand', // Ajoutez cette colonne pour stocker la catégorie du produit
 
 
     ];

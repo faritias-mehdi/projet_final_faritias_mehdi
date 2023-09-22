@@ -10,7 +10,7 @@
     @endif
     <!-- Button trigger modal -->
     <div class=" text-center mt-20">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
             add Produit
         </button>
 
@@ -40,7 +40,7 @@
                         <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
                             <input type="file" name="image" class="form-control" id="image"
-                                aria-describedby="image">
+                                aria-describedby="image" required>
                         </div>
 
                         <div class="mb-3">
@@ -50,8 +50,8 @@
                         </div>
 
                         <div class="mb-3 d-none">
-                            <input name="createur" type="number" min="0" value="{{ $createur }}" class="form-control"
-                                id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input name="createur" type="number" min="0" value="{{ $createur }}"
+                                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
 
                         <select name="categorie" class="form-select" aria-label="Default select example">
@@ -64,7 +64,7 @@
                         <div class="modal-footer">
                             <div class="mb-3">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-success">Ajouter</button>
+                                <button type="submit" class="btn btn-success">add</button>
                             </div>
                         </div>
 
@@ -76,19 +76,19 @@
     </div>
 
 
-    
+
 
 
     <table class="table container mt-10 ">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Titre</th>
-                <th scope="col">Prix</th>
-                <th scope="col">Image</th>
+                <th scope="col">title</th>
+                <th scope="col">price</th>
+                <th scope="col">pics</th>
                 <th scope="col">Stock</th>
-                <th scope="col">Modifier</th>
-                <th scope="col">Supperimer</th>
+                <th scope="col">edit</th>
+                <th scope="col">delete</th>
             </tr>
         </thead>
 
@@ -108,7 +108,9 @@
                         {{ $produit->prix }}
                     </td>
                     <td>
-                        {{ $produit->image }}
+                        <img src={{ 'storage/imgs/' . $produit->image }} alt="" width='40' HEIGHT='40'
+                            srcset="">
+
 
                         <img src="" alt="">
                     </td>
@@ -130,7 +132,7 @@
                     </td>
 
                 </tr>
-            @endforeach 
+            @endforeach
 
         </tbody>
 

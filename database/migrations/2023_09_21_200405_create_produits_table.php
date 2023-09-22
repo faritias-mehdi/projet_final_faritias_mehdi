@@ -16,9 +16,8 @@ return new class extends Migration
             $table->string('titre');
             $table->integer('prix');
             $table->string('image');
-            $table->string('createur');
             $table->integer('stock');
-            $table->string("categorie");
+            $table->string("brand");
             $table->timestamps();
         });
     }

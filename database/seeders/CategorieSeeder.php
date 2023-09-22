@@ -13,9 +13,8 @@ class CategorieSeeder extends Seeder
      */
     public function run(): void
     {
-        Categorie::create(['name'=>'Chaise en plastique']);
-        Categorie::create(['name'=>'Chaise en bois']);
-        Categorie::create(['name'=>'Chaise en fer']);
-
+        Categorie::create(['name' => 'gaming chair']);
+        Categorie::create(['name' => ' Adirondack Chair ']);
+        Categorie::create(['name' => 'Bentwood Chair']);
     }
 }

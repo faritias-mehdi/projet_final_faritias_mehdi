@@ -1,66 +1,31 @@
 @extends('layouts.frontend')
 @section('content')
-
     <!-- banner part start-->
     <section class="banner_part">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="banner_slider owl-carousel">
-                        <div class="single_banner_slider">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-8">
-                                    <div class="banner_text">
-                                        <div class="banner_text_iner">
-                                            <h1>Wood & Cloth
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
+                        @foreach ($products as $produit)
+                            <div class="single_banner_slider">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-8">
+                                        <div class="banner_text">
+                                            <div class="banner_text_iner">
+                                                <h1>{{ $produit->titre }}</h1>
+                                                <p>{{ $produit->prix }}</p>
+                                                <a href={{ route('checkout.checkout') }} class="btn_2">buy now</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="banner_img d-none d-lg-block">
-                                    <img src="img/banner_img.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_banner_slider">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-8">
-                                    <div class="banner_text">
-                                        <div class="banner_text_iner">
-                                            <h1>Cloth & Wood
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
-                                        </div>
+                                    <div class="banner_img d-none d-lg-block w-50 h-50">
+                                        <img src={{ asset('storage/imgs/' . $produit->image) }}
+                                            style='w-100 h-100 object-fit-cover' alt="">
                                     </div>
                                 </div>
-                                <div class="banner_img d-none d-lg-block">
-                                    <img src="img/banner_img.png" alt="">
-                                </div>
                             </div>
-                        </div>
-                        <div class="single_banner_slider">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-8">
-                                    <div class="banner_text">
-                                        <div class="banner_text_iner">
-                                            <h1>Wood & Cloth
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="banner_img d-none d-lg-block">
-                                    <img src="img/banner_img.png" alt="">
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
 
                     </div>
                     <div class="slider-counter"></div>
@@ -459,5 +424,4 @@
         </div>
     </section>
     <!--::subscribe_area part end::-->
-    
 @endsection

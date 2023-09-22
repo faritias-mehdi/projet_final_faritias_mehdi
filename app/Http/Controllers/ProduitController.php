@@ -28,6 +28,7 @@ class ProduitController extends Controller
             "prix" => ["required"],
             "stock" => ["required"],
             "categorie" => ["required"],
+        
         ]);
 
         $image = $request->file("image");
@@ -44,7 +45,7 @@ class ProduitController extends Controller
             "stock" => $request->stock,
             "categorie" => $request->categorie,
             "createur" => 1,
-            // "image" => $image->hashName(),
+            "image" => $image->hashName(),
         ];
 
         
@@ -81,5 +82,8 @@ class ProduitController extends Controller
         
         $produit->create($data);       
         return redirect()->back();
+    }
+    public function checkout(){
+        return view("frontend.checkout");
     }
 }

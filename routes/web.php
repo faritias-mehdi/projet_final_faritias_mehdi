@@ -4,6 +4,7 @@ use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\ProduitWCntoller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleeController;
+use App\Models\Produit;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('frontend.home');
+    $products =  Produit::all();
+    return view('frontend.home',compact('products'));
 })->name('frontend.home');
 
 Route::get('/contact', function () {
@@ -36,6 +38,8 @@ Route::get('/panier', function () {
 Route::get('/coeur', function () {
     return view('frontend.coeur');
 });
+
+Route::get('/checkout' , [ProduitController::class , "checkout"])->name("checkout.checkout");
 
 Route::get('/allproduitWM', function () {
     return view('backend.allproduitWM');
